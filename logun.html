@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Auth Page</title>
+    <link rel="stylesheet" href="logun.css">
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section styles */
+        section {
+            padding: 50px;
+            margin: 20px 0;
+        }
+
+        /* Feedback form styles */
+        .feedback-form input,
+        .feedback-form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        /* Help buttons styles */
+        .help-buttons button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Amazon e-Care</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="cont">
+        <div class="auth-container">
+            <div class="auth-buttons">
+                <button id="signUpBtn" class="auth-btn">Sign Up</button>
+                <button id="signInBtn" class="auth-btn">Sign In</button>
+            </div>
+
+            <div id="signUpForm" class="form-container">
+                <h2>Create account</h2>
+                <form id="signupForm">
+                    <input type="text" id="signUpName" placeholder="Name" required>
+                    <input type="tel" id="signUpMobile" placeholder="Mobile Number" required>
+                    <input type="text" id="signUpAddress" placeholder="Address" required>
+                    <input type="text" id="signUpDoor" placeholder="Door No." required>
+                    <input type="email" id="signUpEmail" placeholder="Email" required>
+                    <input type="password" id="signUpPassword" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+
+            <div id="signInForm" class="form-container">
+                <h2>Sign-In</h2>
+                <form id="signinForm">
+                    <input type="text" id="signInName" placeholder="Name" required>
+                    <input type="password" id="signInPassword" placeholder="Password" required>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About</h2>
+        <p><br>
+            Amazon e-Care is a healthcare app designed to support pregnant women and people with disabilities. It features a simple sign-up process requiring basic details like name, mobile number, address, and pincode. In emergencies, such as when a pregnant woman is alone and experiencing pain, a "Help" button sends alert signals to relatives, nearby hospitals, and ambulances, ensuring swift assistance. Utilizing AWS Cloud for data storage, Google Maps API for location services, and advanced alert technology, Amazon Care aims to provide reliable, critical support. While its success depends on widespread adoption and reliable internet access, the app's innovative approach holds strong potential for significant impact..</p>
+    </section>
+
+    <section id="feedback">
+        <h2>Feedback</h2>
+        <form class="feedback-form">
+            <input type="text" id="feedbackName" placeholder="Name" required>
+            <input type="tel" id="feedbackMobile" placeholder="Mobile Number" required>
+            <input type="email" id="feedbackEmail" placeholder="Email" required>
+            <input type="number" id="feedbackRating" placeholder="Rating" required>
+            <textarea id="feedbackReview" placeholder="Review" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <section id="help">
+        <h2>Help</h2>
+        <div class="help-buttons">
+            <li>  <button onclick="alert('Profile Updation')">Profile Updation</button>
+                <button onclick="alert('Mobile Number Modification')">Mobile Number Modification</button>
+                <button onclick="alert('Address Change')">Address Change</button>
+                <button onclick="alert('Add/Remove Mobile number')">Add/Remove Mobile number</button>
+                <button onclick="alert('About Alert Signal')">About Alert Signal</button>
+
+                <!-- Add more help buttons as needed -->
+                <!-- Add more help buttons as needed --></li>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="title">Contact Support</h1>
+        <div class="contact-info-upper-container">
+          <div class="contact-info-container">
+            <img
+              src="./assets/email.png"
+              alt="Email icon"
+              class="icon contact-icon email-icon"
+            />
+            <p><a href="mailto:examplemail@gmail.com">rohithmudigondathrinadhsairohi@gmail.com</a></p>
+          </div>
+          <div class="contact-info-container">
+            <img
+              src="./assets/linkedin.png"
+              alt="LinkedIn icon"
+              class="icon contact-icon linkedin-icon"
+            />
+            <p><a href="https://www.linkedin.com/in/rohith-mudigonda-b60752239">LinkedIn</a></p>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <nav>
+          <div >
+            <ul class="nav-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#feedback">Feedback</a></li>
+              <li><a href="#help">Help</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav><br>
+        <p>Copyright &#169; 2024 Amazon Web Services. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('signUpBtn').addEventListener('click', function () {
+            document.getElementById('signUpForm').style.display = 'block';
+            document.getElementById('signInForm').style.display = 'none';
+        });
+
+        document.getElementById('signInBtn').addEventListener('click', function () {
+            document.getElementById('signUpForm').style.display = 'none';
+            document.getElementById('signInForm').style.display = 'block';
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Sign up logic here
+            alert('Sign up successful!');
+            window.location.href = 'help.html';
+        });
+
+        document.getElementById('signinForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Sign in logic here
+            alert('Sign in successful!');
+            window.location.href = 'help.html';
+        });
+
+        document.querySelector('.feedback-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Feedback form logic here
+            alert('Feedback submitted!');
+        });
+    </script>
+</body>
+
+</html>
